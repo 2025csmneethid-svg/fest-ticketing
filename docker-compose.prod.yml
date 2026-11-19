@@ -1,0 +1,9 @@
+# Used on the server: run the images built by the pipeline instead of building from source.
+# docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+services:
+  booking-service:
+    image: ghcr.io/${GHCR_OWNER}/fest-booking-service:latest
+  payment-service:
+    image: ghcr.io/${GHCR_OWNER}/fest-payment-service:latest
+  frontend:
+    image: ghcr.io/${GHCR_OWNER}/fest-frontend:latest
